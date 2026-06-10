@@ -1,0 +1,13 @@
+{
+  "name": "@aryagg/create-super-svelte-skeleton",
+  "version": "1.0.16",
+  "type": "module",
+  "private": false,
+  "bin": {
+    "create-super-svelte-library": "cli.js"
+  },
+  "files": [
+    "cli.js",
+    "template"
+  ]
+}
