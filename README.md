@@ -7,12 +7,12 @@ A CLI scaffolding tool. One command gives you a fully wired Svelte 5 starter —
 ## 1. Create your project
 
 ```bash
-npm create @aryagg/super-svelte-skeleton my-app
+npm create create-super-svelte-library my-app
 ```
 
 This copies the full template into `my-app/` and runs `npm install` automatically.
 
-> `npm create` prepends `create-` to the package name automatically, so `@aryagg/super-svelte-skeleton` resolves to this package (`@aryagg/create-super-svelte-skeleton`).
+> `npm create` prepends `create-` to the package name automatically, so `create-super-svelte-library` resolves to this package (`@aryagg/create-super-svelte-skeleton`).
 
 ---
 
