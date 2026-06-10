@@ -1,6 +1,6 @@
 {
   "name": "@aryagg/create-super-svelte-library",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "type": "module",
   "private": false,
   "bin": {
