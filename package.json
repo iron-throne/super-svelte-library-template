@@ -3,6 +3,10 @@
   "version": "1.0.1",
   "type": "module",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iron-throne/super-svelte-library-template"
+  },
   "bin": {
     "create-super-svelte-library": "cli.js"
   },

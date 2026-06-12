@@ -1,4 +1,4 @@
-# @aryagg/create-super-svelte-skeleton
+# @aryagg/create-super-svelte-library
 
 A CLI scaffolding tool. One command gives you a fully wired Svelte 5 starter — auth, API layer, i18n, offline support, and 20+ components — ready to run.
 
@@ -7,12 +7,12 @@ A CLI scaffolding tool. One command gives you a fully wired Svelte 5 starter —
 ## 1. Create your project
 
 ```bash
-npm create create-super-svelte-library my-app
+npm create @aryagg/super-svelte-library my-app
 ```
 
 This copies the full template into `my-app/` and runs `npm install` automatically.
 
-> `npm create` prepends `create-` to the package name automatically, so `create-super-svelte-library` resolves to this package (`@aryagg/create-super-svelte-skeleton`).
+> `npm create` prepends `create-` to the package name automatically, so `@aryagg/super-svelte-library` resolves to `@aryagg/create-super-svelte-library` (this package).
 
 ---
 
@@ -215,7 +215,7 @@ Only `cli.js` and the `template/` folder are included in the npm tarball (contro
 ### Repo structure
 
 ```
-super-duper-skeleton-svelte/
+super-svelte-library-template/
 ├── cli.js          ← scaffolding script (entry point)
 ├── package.json    ← package config (name, version, bin, files)
 └── template/       ← everything here gets copied into the new project
