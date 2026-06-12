@@ -1,65 +1,77 @@
-# Svelte library
+# ui-kit
 
-Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
+A Svelte 5 component library template powered by [SvelteKit](https://svelte.dev/docs/kit), [Tailwind CSS v4](https://tailwindcss.com), and TypeScript.
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+## Stack
 
-## Creating a project
+- **Svelte 5** with runes mode enforced across the project
+- **SvelteKit** — dev server, routing, and packaging
+- **Tailwind CSS v4** via `@tailwindcss/vite`
+- **TypeScript** with strict config
+- **ESLint + Prettier** (with `eslint-plugin-svelte`)
+- **`@aryagg/theme`**, **`@aryagg/types`**, **`@aryagg/utils`** — shared design system packages
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Getting started
 
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
+Install dependencies:
 
 ```sh
-# recreate this project
-npx sv@0.16.1 create --template library --types ts --add prettier eslint --install npm ui-kit
+npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Start the dev server (includes a live showcase app at `src/routes`):
 
 ```sh
 npm run dev
 
-# or start the server and open the app in a new browser tab
+# open in browser automatically
 npm run dev -- --open
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+## Project structure
+
+```
+src/
+  lib/        ← library source (exported to consumers)
+  routes/     ← showcase / preview app (not published)
+```
+
+Everything inside `src/lib` is part of the published library. Use `src/routes` to build demos and test components interactively.
 
 ## Building
 
-To build your library:
-
-```sh
-npm pack
-```
-
-To create a production version of your showcase app:
+Build and package the library:
 
 ```sh
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+This runs `svelte-kit sync`, `svelte-package`, and `publint` in sequence. Output goes to `dist/`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Preview the showcase app production build:
+
+```sh
+npm run preview
+```
+
+## Type checking & linting
+
+```sh
+npm run check          # svelte-check + tsc
+npm run check:watch    # watch mode
+
+npm run lint           # prettier + eslint
+npm run format         # auto-format with prettier
+```
 
 ## Publishing
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
+1. Set the `"name"` field in `package.json` to your desired package name.
+2. Add a `"license"` field and a `LICENSE` file (e.g. [MIT](https://opensource.org/license/mit/)).
+3. Publish to npm:
 
 ```sh
 npm publish
 ```
+
+The `"exports"` field in `package.json` exposes `./dist/index.js` (Svelte) and `./dist/index.d.ts` (types) for consumers.
