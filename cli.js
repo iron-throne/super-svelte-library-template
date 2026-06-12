@@ -7,7 +7,7 @@ import { execSync } from "child_process";
 // ESM doesn't have __dirname (ESM is browser‑compatible, and browsers don’t have __dirname), so we derive it from the current file's URL
 const __dirname = path.dirname(fileURLToPath(import.meta.url)); //( import.meta.url  full URL of the current file.)
 
-// Second CLI arg is the project name; default to "svelte-library" if omitted
+// Second CLI arg is the project name; default to "svelte-app" if omitted
 const target = process.argv[2] || "svelte-library";
 
 // Bail early if the target folder already exists to avoid overwriting anything
@@ -51,7 +51,7 @@ fs.cpSync(templateDir, target, {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) renameGitignores(full);
-      else if (entry.name === "_gitignore") fs.renameSync(full, path.join(dir, "."));
+      else if (entry.name === "_gitignore") fs.renameSync(full, path.join(dir, ".gitignore"));
     }
   };
   renameGitignores(target);
